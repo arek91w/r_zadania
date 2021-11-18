@@ -47,6 +47,7 @@ KNNtrain <- function( X, y_tar, k, XminNew, XmaxNew){
 
 
 
+
 # Zadanie 2:
 # a) Stwórz funkcję "KNNpred" przyjmującą nastęujące parametry: "KNNmodel", "X".
 # b) Funkcja w pierwszym kroku powinna sprawdzać czy predykcja jest możliwa do wykonania tj:
