@@ -4,6 +4,8 @@ d_euklides <- function( x_i, x_n ){
   return( sqrt( sum( ( x_i - x_n )^2 ) ) )
 }
 
+y2
+
 dEuklides <- function(dane){
   n <- nrow( dane )
   odl <- matrix( 0, n, n )
@@ -37,3 +39,13 @@ KNNpred <- function( model, X ){
   }
   return( pred )
 }
+
+x2
+nrow(x2)
+KNNpred( y2, y2$X )
+
+tt <- as.numeric(y2$y)
+typeof(y2$y)
+library(caret)
+KNNreg_pakiet <- knnreg( y2$X, y2$y, k = 3 )
+predict( KNNreg_pakiet, y2$X)

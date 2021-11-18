@@ -2,6 +2,17 @@ zbiorD <- data.frame( x1 = c( rep(1,5), rep(2,5) ), x2 = runif(10), x3 = rnorm(1
 zbiorD
 x2 = runif(10)
 x2
+emp.data <- data.frame(
+  emp_id = c (1:5), 
+  emp_name = c("Rick","Dan","Michelle","Ryan","Gary"),
+  salary = c(623.3,12 ,611.0,729.0,0), 
+  
+  start_date = as.Date(c("2012-01-01", "2013-09-23", "2014-11-15", "2014-05-11",
+                         "2015-03-27")),
+  stringsAsFactors = FALSE
+)
+
+emp.data
 
 
 MinMax <- function( x, new_min, new_max){
@@ -21,13 +32,21 @@ normalize <- function( df, new_min, new_max){
   return(df)
 }
 
+new_zbiorD <- normalize(zbiorD, 1, 3)
+
+new_zbiorD
+
+
+x <- c(2, -1, 12, 44)
+y <- MinMax(x, 0, 1)
+print(y)
 
 kNNtrain <- function(X, y_tar, k, XminNew, XmaxNew) {
   
   # sprawdz czy X jest macierza lub ramka danych
   
   if (!(is.matrix(X) | is.data.frame(X)))  {
-    print("INPUT ERROR: X musi być macierza lub ramka danych!")
+    print("INPUT ERROR: X musi byÄ‡ macierza lub ramka danych!")
   }
   
   # sprawdz czy X i y_tar nie maja brakow danych
@@ -50,7 +69,16 @@ kNNtrain <- function(X, y_tar, k, XminNew, XmaxNew) {
   }
 }
 
-y2 <- kNNtrain(zbiorD, x2, 3, 2, 6)
+y2 <- kNNtrain(zbiorD, x2, 4, 2, 6)
 y2
 
-      
+y <- c(1,2,3,NA)
+
+NA %in% emp.data
+is.na(emp.data)
+sum(is.na(y))
+match(TRUE, is.na(y))
+
+A <- matrix(c(1:5))
+A
+!is.matrix(A)

@@ -48,7 +48,7 @@ KNNtrain <- function( X, y_tar, k = 5 ){
   return( knn )
 }
 
-KNNreg <- KNNtrain( zbiorD[,-4], zbiorD[,4], k = 5 )
+KNNreg <- KNNtrain( zbiorD[,-4], zbiorD[,4], k = 2 )
 
 KNNpred <- function( model, X ){
   nTrain <- nrow( model$X )
@@ -70,9 +70,10 @@ KNNpred <- function( model, X ){
 }
 
 KNNpred( KNNreg, zbiorD[,-4] )
+zbiorD[,-4]
 
 library(caret)
-KNNreg_pakiet <- knnreg( zbiorD[,-4], zbiorD[,4], k = 5 )
+KNNreg_pakiet <- knnreg( zbiorD[,-4], zbiorD[,4], k = 1 )
 str( KNNreg_pakiet )
 
 predict( KNNreg_pakiet, zbiorD[,-4] )
