@@ -82,3 +82,6 @@ KNNpred( KNNreg, zbiorD[,-4] )
 zbiorD[,-4]
 zbiorD[,4]
 zbiorD
+
+kk <- data.frame( P = c(0.3,0.6), N = c(0.7,0.4), Klasa = c("N","P") )
+kk

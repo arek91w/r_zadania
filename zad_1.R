@@ -20,7 +20,8 @@ normalize <- function( df, new_min, new_max){
   }
   return(df)
 }
-
+t <- normalize(zbiorD, 2, 44)
+t
 
 kNNtrain <- function(X, y_tar, k, XminNew, XmaxNew) {
   
